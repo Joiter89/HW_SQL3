@@ -40,7 +40,6 @@ select distinct(al.name) from album al
 join albumartist aa on al.id = aa.album_id 
 join artist ar on aa.artist_id = ar.id 
 join artistmusicgenre am on ar.id = am.artist_id 
-join musicgenre m on am.musicgenre_id  = m.id 
 group by al.name, ar.id 
 having count(am.musicgenre_id) > 1;
 
